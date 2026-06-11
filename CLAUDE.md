@@ -60,3 +60,9 @@ src/test/
 - **`ApiClient`** initialises the `RequestSpecification` once (static block) with the base URI and auth query params (`key`, `token`) so individual API classes stay free of auth boilerplate.
 - **`Hooks.@After`** deletes the board stored in `ScenarioContext` after every scenario, keeping the Trello account clean regardless of test outcome.
 - **`junit-platform.properties`** drives `mvn test`; `CucumberRunner` is only for IDE execution.
+
+## GitHub Actions
+
+Two workflows are configured in `.github/workflows/`:
+- **`claude.yml`** — triggers Claude Code when `@claude` is mentioned in a PR comment, issue, or review.
+- **`claude-code-review.yml`** — runs automated code review on pull requests.
